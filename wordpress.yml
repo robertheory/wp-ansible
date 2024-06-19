@@ -1,0 +1,8 @@
+---
+- name: Install WordPress
+  hosts: raspberrypi
+  become: yes
+  #
+  roles:
+    - mysql-server
+    - wordpress
