@@ -1,0 +1,5 @@
+vars.yml
+
+*.pem
+
+hosts
