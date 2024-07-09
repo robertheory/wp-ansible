@@ -6,7 +6,6 @@
       - mysql-client
       - python3-mysqldb
       - libmysqlclient-dev
-
     update_cache: yes
 
 - name: User creation

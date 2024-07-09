@@ -1,8 +1,12 @@
 ---
 - name: Install WordPress
-  hosts: raspberrypi
+  hosts: wp-machines
   become: yes
+  remote_user: ubuntu
   #
+  vars_files:
+    - vars.yml
   roles:
+    - php
     - mysql-server
     - wordpress

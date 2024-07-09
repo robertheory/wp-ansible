@@ -1,21 +1,9 @@
 ---
-- name: Nginx, PHP, MySQL and WordPress installation
+- name: Install Nginx and unzip
   apt:
     pkg:
       - nginx
       - unzip
-      - php7.4-zip
-      - php-imagick
-      - php7.4-curl
-      - php7.4-fpm
-      - php7.4-mbstring
-      - php7.4-cli
-      - php7.4-bcmath
-      - php7.4-xml
-      - php7.4-mysql
-      - php7.4-common
-      - php7.4-gd
-      - php7.4-json
     update_cache: yes
 
 - name: Nginx Vhost configuration
@@ -23,7 +11,7 @@
     src: vhost.nginx.conf.j2
     dest: /etc/nginx/sites-enabled/default
 
-- name: WordPress unpack
+- name: WordPress download and unpack
   ansible.builtin.unarchive:
     src: https://wordpress.org/latest.zip
     dest: /var/www/html

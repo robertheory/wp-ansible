@@ -1,0 +1,9 @@
+## Example File - Copy this file to vars.yml and customize it to your needs ##
+
+## -- server config -- ##
+ansible_ssh_private_key_file: ./wp-key.pem
+
+## -- PHP configuration -- ##
+php_fpm:
+  # PHP version to install. Defaults to PHP 7.3.
+  version: 7.4
