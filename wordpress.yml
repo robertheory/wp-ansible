@@ -1,6 +1,6 @@
 ---
 - name: Install WordPress
-  hosts: wp-machines
+  hosts: wpvms
   become: yes
   remote_user: ubuntu
   #
