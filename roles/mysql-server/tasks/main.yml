@@ -10,13 +10,13 @@
 
 - name: User creation
   mysql_user:
-    name: 'wpuser'
-    password: 'Wp@12345'
+    name: '{{ mysql.username }}'
+    password: '{{ mysql.password }}'
     priv: '*.*:ALL'
     host: '%'
     state: present
 
 - name: Database creation
   mysql_db:
-    name: 'wordpress'
+    name: '{{ mysql.db_name }}'
     state: present

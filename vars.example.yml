@@ -1,9 +1,19 @@
-## Example File - Copy this file to vars.yml and customize it to your needs ##
+#Copy config to a file named vars.yml and change to suit your own needs
 
 ## -- server config -- ##
 ansible_ssh_private_key_file: ./wp-key.pem
 
 ## -- PHP configuration -- ##
 php_fpm:
+  repo: ppa:ondrej/php
   # PHP version to install. Defaults to PHP 7.3.
   version: 7.4
+
+## -- MySQL configuration -- ##
+mysql:
+  # MySQL password
+  username: wpuser
+  # MySQL password
+  password: Wp@12345
+  # MySQL database name
+  db_name: wordpress

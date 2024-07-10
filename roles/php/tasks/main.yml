@@ -1,7 +1,7 @@
 ---
 - name: Add PHP repo
   apt_repository:
-    repo: ppa:ondrej/php
+    repo: '{{ php_fpm.repo }}'
 
 - name: Install PHP
   apt:

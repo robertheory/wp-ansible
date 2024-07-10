@@ -1,15 +1,9 @@
 ---
-- name: Install Nginx and unzip
+- name: Install unzip
   apt:
     pkg:
-      - nginx
       - unzip
     update_cache: yes
-
-- name: Nginx Vhost configuration
-  template:
-    src: vhost.nginx.conf.j2
-    dest: /etc/nginx/sites-enabled/default
 
 - name: WordPress download and unpack
   ansible.builtin.unarchive:
@@ -22,7 +16,7 @@
     src: wp-config.php.j2
     dest: /var/www/html/wordpress/wp-config.php
 
-- name: /var/www/html/wordpress ownership and permissions
+- name: /var/www/html/wordpress ownership
   ansible.builtin.file:
     path: /var/www/html/wordpress
     owner: www-data
